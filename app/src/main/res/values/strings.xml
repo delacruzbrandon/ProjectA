@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjectA</string>
+
+    <string name="testProductName">Pégase Légère</string>
+    <string name="testProductPrice">$3,574</string>
+    <string name="testProductInfo">
+        Volume: 34.5 L, weight: 3.9 kg, damier Ebene canvas exterior, polyamide lining, shiny golden metallic pieces, telescopic cane, 1 clothing protection flaps and garment cover with hanger, one name tag and iconic Louis Vuitton signature padlocks.
+    </string>
 </resources>
