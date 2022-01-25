@@ -35,6 +35,8 @@ fun ProjectATheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
         LightColorPalette
     }
 
+
+
     MaterialTheme(
             colors = colors,
             typography = Typography,

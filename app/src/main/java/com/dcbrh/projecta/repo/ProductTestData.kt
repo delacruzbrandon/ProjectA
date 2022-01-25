@@ -5,11 +5,12 @@ import com.dcbrh.projecta.model.ProductModel
 
 object ProductTestData {
 
+
     private val productModel = ProductModel(
         1,
         R.mipmap.testbag,
+        R.string.testProductBrand.toString(),
         R.string.testProductName.toString(),
-        R.string.testProductInfo.toString(),
         R.string.testProductPrice.toString()
     )
 
