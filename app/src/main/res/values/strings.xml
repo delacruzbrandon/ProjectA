@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">ProjectA</string>
-
-    <string name="testProductBrand">Pégase Légère</string>
-    <string name="testProductName">Pégase Légère 55 Business</string>
-    <string name="testProductPrice">$3,574</string>
 </resources>
