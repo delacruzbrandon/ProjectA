@@ -3,6 +3,9 @@ package com.dcbrh.projecta
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.animateIntSizeAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,8 +16,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import com.dcbrh.projecta.model.ProductModel
 import com.dcbrh.projecta.repo.ProductTestData
@@ -60,6 +65,7 @@ fun ProductList(_productList: List<ProductModel>) {
 fun Product(_product: ProductModel) {
 
     var isExpanded by remember { mutableStateOf(true) }
+    val sizeModifier: Modifier = if(!isExpanded) Modifier.animateContentSize().height(0.dp) else Modifier.animateContentSize().fillMaxHeight()
 
     Row(modifier = Modifier.padding(16.dp)) {
         Image(
@@ -70,10 +76,16 @@ fun Product(_product: ProductModel) {
         )
         Spacer(modifier = Modifier.width(16.dp))
         Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
-            Text(
-                text = _product.productBrand,
-                modifier = if(!isExpanded) Modifier.height(0.dp) else Modifier.fillMaxHeight()
-            )
+            Surface(
+                shape = MaterialTheme.shapes.medium,
+                elevation = 1.dp,
+            ) {
+                Text(
+                    text = _product.productBrand,
+                    modifier = sizeModifier
+                )
+            }
+
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = _product.productName)
             Spacer(modifier = Modifier.height(8.dp))

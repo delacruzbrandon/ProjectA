@@ -22,6 +22,6 @@ object ProductTestData {
         productModel,
         productModel,
         productModel
-        )
+    )
 
 }
